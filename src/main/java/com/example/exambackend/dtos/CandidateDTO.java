@@ -1,10 +1,14 @@
 package com.example.exambackend.dtos;
 
 import com.example.exambackend.entities.Candidate;
+import com.example.exambackend.entities.Party;
+import com.example.exambackend.repos.PartyRepository;
+import com.example.exambackend.services.PartyService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -17,12 +21,12 @@ public class CandidateDTO {
     private String first_name;
     private String last_name;
 
-    private String party;
+    private String partyId;
 
     public CandidateDTO(Candidate candidate){
         this.first_name = candidate.getFirst_name();
         this.last_name = candidate.getLast_name();
-        this.party = candidate.getParty().getPartyName();
+        this.partyId = candidate.getParty().getPartyId();
     }
 
     public static List<CandidateDTO> CandidateDTOSfromCandidate(Iterable<Candidate> candidates){

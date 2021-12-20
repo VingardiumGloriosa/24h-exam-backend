@@ -17,12 +17,21 @@ public class Vote {
     private int voteId;
 
     @ManyToOne
-    @JoinColumn(name="candidateId", nullable=false)
+    @JoinColumn(name="candidateId")
     private Candidate candidate;
 
+    @ManyToOne
+    @JoinColumn(name="partyId", nullable=false)
+    private Party party;
 
-    public Vote(Candidate candidate){
+
+    public Vote(Candidate candidate, Party party){
         this.candidate = candidate;
+        this.party = party;
+    }
+
+    public Vote(Party party){
+        this.party = party;
     }
 
     public Vote() {

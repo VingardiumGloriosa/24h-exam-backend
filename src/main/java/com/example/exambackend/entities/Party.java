@@ -21,11 +21,10 @@ public class Party {
 
     public Party() {
     }
-/*
-    public Party(String id,String partyName) {
+
+    public Party(String id) {
         this.partyId = id;
-        this.partyName = partyName;
     }
-*/
+
 
 }
