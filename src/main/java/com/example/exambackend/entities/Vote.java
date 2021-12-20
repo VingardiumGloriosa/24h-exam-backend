@@ -35,6 +35,11 @@ public class Vote {
     }
 
     public Vote() {
+    }
 
+    public Boolean hasCandidate(){
+        if(candidate==null){
+            return false;
+        }else return true;
     }
 }

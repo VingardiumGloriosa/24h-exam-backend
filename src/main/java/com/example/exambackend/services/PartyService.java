@@ -2,6 +2,7 @@ package com.example.exambackend.services;
 
 import com.example.exambackend.dtos.CandidateDTO;
 import com.example.exambackend.dtos.PartyDTO;
+import com.example.exambackend.entities.Party;
 import com.example.exambackend.repos.CandidateRepository;
 import com.example.exambackend.repos.PartyRepository;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,9 @@ public class PartyService {
 
     public List<PartyDTO> getParties(){
         return PartyDTO.PartyDTOSfromParties(partyRepository.findAll());
+    }
+
+    public Party getPartyById(String id){
+        return partyRepository.findById(id).orElseThrow();
     }
 }

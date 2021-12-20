@@ -26,5 +26,8 @@ public class Party {
         this.partyId = id;
     }
 
-
+    public Party(Party party){
+        this.partyId = party.getPartyId();
+        this.partyName = party.getPartyName();
+    }
 }

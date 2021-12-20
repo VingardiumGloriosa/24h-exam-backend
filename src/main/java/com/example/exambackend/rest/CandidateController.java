@@ -1,8 +1,13 @@
 package com.example.exambackend.rest;
 
 import com.example.exambackend.dtos.CandidateDTO;
+import com.example.exambackend.entities.Candidate;
+import com.example.exambackend.entities.Party;
 import com.example.exambackend.services.CandidateService;
+import com.example.exambackend.services.PartyService;
+import com.example.exambackend.services.VoteService;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +16,11 @@ import java.util.List;
 @RequestMapping("api/candidates")
 public class CandidateController {
 
+    @Autowired
     CandidateService candidateService;
+
+    @Autowired
+    PartyService partyService;
 
     public CandidateController(CandidateService candidateSer){
         candidateService = candidateSer;
@@ -37,6 +46,14 @@ public class CandidateController {
     @DeleteMapping("/delete/{candidateId}")
     public void deleteCandidate(@PathVariable int candidateId){
         candidateService.deleteCandidate(candidateId);
+    }
+
+    @PutMapping("/editByPartyId/{candidateId}/{first_name}/{last_name}/{partyId}")
+    public void editCandidate(@PathVariable int candidateId,
+                                   @PathVariable String first_name,
+                                   @PathVariable String last_name,
+                                   @PathVariable String partyId){
+        candidateService.editCandidate(candidateId,first_name,last_name,new Party(partyService.getPartyById(partyId.toUpperCase())));
     }
 
 }
