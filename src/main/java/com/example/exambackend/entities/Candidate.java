@@ -23,7 +23,7 @@ public class Candidate {
     @Column(length =20,nullable = false)
     private String first_name;
 
-    @Column(length =20,nullable = false)
+    @Column(length =40,nullable = false)
     private String last_name;
 
     @ManyToOne
@@ -49,5 +49,9 @@ public class Candidate {
         this.first_name = candidate.getFirst_name();
         this.last_name = candidate.getLast_name();
         this.party = new Party(candidate.getPartyId());
+    }
+
+    public Candidate(int candidateID) {
+        this.candidateId = candidateID;
     }
 }

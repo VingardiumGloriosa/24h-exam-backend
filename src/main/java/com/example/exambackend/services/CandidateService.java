@@ -31,6 +31,10 @@ public class CandidateService {
         return CandidateDTO.CandidateDTOSfromCandidate(candidateRepository.findAll());
     }
 
+    public List<Candidate> getAllCandidates(){
+        return candidateRepository.findAll();
+    }
+
     public List<CandidateDTO> getCandidatesByParty(String partyID){
        List<CandidateDTO> temp = new ArrayList<>();
         for (CandidateDTO temporary : CandidateDTO.CandidateDTOSfromCandidate(candidateRepository.findAll())) {

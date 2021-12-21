@@ -1,6 +1,7 @@
 package com.example.exambackend.rest;
 
 import com.example.exambackend.dtos.PartyDTO;
+import com.example.exambackend.entities.Party;
 import com.example.exambackend.services.PartyService;
 import com.example.exambackend.services.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class PartyController {
     }
 
     @GetMapping
-    public List<PartyDTO> getAllParties(){
+    public List<Party> getAllParties(){
         return partyService.getParties();
     }
 }

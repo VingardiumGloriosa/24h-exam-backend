@@ -37,6 +37,15 @@ public class Vote {
     public Vote() {
     }
 
+    public Vote(String partyID, int candidateID) {
+        this.party = new Party(partyID);
+        this.candidate = new Candidate(candidateID);
+    }
+
+    public Vote(String partyID) {
+        this.party = new Party(partyID);
+    }
+
     public Boolean hasCandidate(){
         if(candidate==null){
             return false;

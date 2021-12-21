@@ -18,11 +18,22 @@ public class PartyService {
         this.partyRepository = partyRepository;
     }
 
-    public List<PartyDTO> getParties(){
+    public List<PartyDTO> getPartyDTOS(){
         return PartyDTO.PartyDTOSfromParties(partyRepository.findAll());
     }
 
+    public List<Party> getParties(){
+        return partyRepository.findAll();
+    }
+
     public Party getPartyById(String id){
-        return partyRepository.findById(id).orElseThrow();
+        for (Party temporary : partyRepository.findAll()) {
+            System.out.println(id);
+            System.out.println(temporary.getPartyId());
+            if(temporary.getPartyId().equals(id.toUpperCase())){
+                return temporary;
+            }
+        }
+        return null;
     }
 }

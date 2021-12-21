@@ -32,7 +32,6 @@ public class DataSetUp implements CommandLineRunner {
         Party p3 = new Party("F","SF");
         Party p4 = new Party("O","Dansk Folkeparti");
         Party p5 = new Party("V","Venstre");
-        Party p6 = new Party("Ø","Enhedslisten + De Rød Grønne");
 
         //Creating candidates
         Candidate c1 = new Candidate("Marcel","Meijer",p1);
@@ -55,6 +54,22 @@ public class DataSetUp implements CommandLineRunner {
         Candidate c17 = new Candidate("Iulian","V. Paiu",p2);
         Candidate c18 = new Candidate("Per","Hingel",p2);
 
+        Candidate c19 = new Candidate("Ulla","Holm",p3);
+        Candidate c20 = new Candidate("Kjeld","Bønkel",p3);
+        Candidate c21 = new Candidate("Anne","Grethe Olsen",p3);
+        Candidate c22 = new Candidate("Lone","Krag",p3);
+        Candidate c23 = new Candidate("Børge"," S. Buur",p3);
+
+        Candidate c24 = new Candidate("Per","Mortensen",p4);
+
+        Candidate c25 = new Candidate("Søren","Wiese",p5);
+        Candidate c26 = new Candidate("Anita","Elgaard Højholt Olesen",p5);
+        Candidate c27 = new Candidate("Carsten","Bruun",p5);
+        Candidate c28 = new Candidate("Mogens","Exner",p5);
+        Candidate c29 = new Candidate("Anja","Guldborg",p5);
+        Candidate c30 = new Candidate("Klaus","Holdorf",p5);
+
+
         //Creating votes
         Vote v1 = new Vote(c1,p1);
         Vote v2 = new Vote(c1,p1);
@@ -70,7 +85,6 @@ public class DataSetUp implements CommandLineRunner {
         partyRepository.save(p3);
         partyRepository.save(p4);
         partyRepository.save(p5);
-        partyRepository.save(p6);
 
         candidateRepository.save(c1);
         candidateRepository.save(c2);
@@ -90,6 +104,18 @@ public class DataSetUp implements CommandLineRunner {
         candidateRepository.save(c18);
         candidateRepository.save(c9);
         candidateRepository.save(c10);
+        candidateRepository.save(c19);
+        candidateRepository.save(c20);
+        candidateRepository.save(c21);
+        candidateRepository.save(c22);
+        candidateRepository.save(c23);
+        candidateRepository.save(c24);
+        candidateRepository.save(c25);
+        candidateRepository.save(c26);
+        candidateRepository.save(c27);
+        candidateRepository.save(c28);
+        candidateRepository.save(c29);
+        candidateRepository.save(c30);
 
         voteRepository.save(v1);
         voteRepository.save(v2);

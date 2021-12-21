@@ -18,4 +18,8 @@ public class VoteService {
     public List<Vote> getAllVotes(){
         return voteRepository.findAll();
     }
+
+    public void addVote(Vote vote){
+        voteRepository.save(vote);
+    }
 }

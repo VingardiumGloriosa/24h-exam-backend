@@ -31,6 +31,11 @@ public class CandidateController {
         return candidateService.getCandidates();
     }
 
+    @GetMapping("/all")
+    public List<Candidate> getAllCandidates(){
+        return candidateService.getAllCandidates();
+    }
+
     @GetMapping("/party/{partyId}")
     public List<CandidateDTO> getCandidatesByParty(@PathVariable String partyId){
         return candidateService.getCandidatesByParty(partyId);
